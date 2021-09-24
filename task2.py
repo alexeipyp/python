@@ -6,6 +6,10 @@ else:
 file = open(path)
 content = file.read()
 file.close()
+#if len(sys.argv) > 1:
+#	content = sys.argv[1]
+#else:
+#	content = "1 2 3 4 5 6 10"
 data = [int(x) for x in content.split()]
 
 maxOstZero = -1

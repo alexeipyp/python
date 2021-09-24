@@ -9,11 +9,12 @@ file = open(path)
 words = dict()
 maxword = ""
 for line in file:
-	line = re.sub(r'[^\w\s]','',line)
+	line = re.sub(r'[^\w\s\-]','',line)
 	for word in line.split():
-		if word.isalpha():
+		if not word.isdigit():
 			if len(word) > len(maxword):
-				maxword = word 
+				maxword = word
+			word.lower() 
 			if word in words:
 				words[word] += 1
 			else:
